@@ -33,7 +33,7 @@ var GameObjects = (function() {
                                moneySpent : 0,
                                dataCollected : 0,
                                dataSpent : 0,
-                               time: -5
+                               time: 0
                              }
                            }]);
   };
