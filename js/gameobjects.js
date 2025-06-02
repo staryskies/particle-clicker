@@ -22,18 +22,18 @@ var GameObjects = (function() {
     GameObject.apply(this, [{
                              key : 'lab',
                              state : {
-                               name : 'Give your lab an awesome name!',
+                               name : 'you win thanks for playing',
                                detector : 1,
-                               factor : 5,
-                               data : 10000000,
-                               money : 10000000,
+                               factor : 1,
+                               data : 10,
+                               money : 0,
                                reputation : 0,
                                clicks : 0,
                                moneyCollected : 0,
                                moneySpent : 0,
                                dataCollected : 0,
                                dataSpent : 0,
-                               time: 0
+                               time: -5
                              }
                            }]);
   };
@@ -60,13 +60,10 @@ var GameObjects = (function() {
   };
 
   Lab.prototype.research = function(cost, reputation) {
-    if (this.state.data >= cost) {
-      this.state.data -= cost;
-      this.state.dataSpent += cost;
-      this.state.reputation += reputation;
-      return true;
-    }
-    return false;
+    this.state.dataSpent += cost;
+    this.state.reputation += reputation;
+    return true;
+
   };
 
   Lab.prototype.buy = function(cost) {
